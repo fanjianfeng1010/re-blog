@@ -1,12 +1,11 @@
-import { connectRouter, RouterState } from 'connected-react-router'
+import { connectRouter,RouterState } from 'connected-react-router'
 import { combineReducers } from 'redux'
 import { History } from 'history'
 import {all,fork} from 'redux-saga/effects'
 // 导入各个文件的 reducer saga,状态类型
-import articleSaga from './article/saga'
-import articleReducer from './article/reducer'
-import { ArticleState } from './article/types'
-
+import articleReducer from './article/reducer';
+import articleSaga from './article/saga';
+import {ArticleState} from './article/types'
 export interface ApplicationState {
   article: ArticleState
   router: RouterState

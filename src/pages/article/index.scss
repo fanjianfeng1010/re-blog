@@ -1,0 +1,18 @@
+.articles-wrapper {
+  .articles-list-item {
+    margin: 10px auto;
+    margin-bottom: 10px;
+    padding: 3vh;
+    width: 80%;
+    box-shadow: 2px 2px 5px black;
+  }
+  button{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+  }
+}

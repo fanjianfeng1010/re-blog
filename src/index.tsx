@@ -5,12 +5,13 @@ import * as serviceWorker from './serviceWorker'
 import configureStore from './configureStore'
 import Main from './Main'
 import { History } from 'history'
+
+import './index.scss';
+
 const initialState = window.INITIAL_REDUX_STATE
 
 // tslint:disable-next-line
-const history: History = createBrowserHistory({
-  basename: '/'
-})
+const history: History = createBrowserHistory()
 const store = configureStore(history, initialState)
 
 ReactDOM.render(<Main store={store} history={history} />, document.getElementById('root'))

@@ -5,7 +5,7 @@ import { routerMiddleware } from 'connected-react-router'
 // 指明传递给 configureStore 的 history 参数为 History 类型
 import { History } from 'history'
 // 导入状态接口,以及经过联合后的 reducers/sagas
-import { ApplicationState, createRootReducer, rootSaga } from './store'
+import { createRootReducer, rootSaga,ApplicationState } from './store'
 
 
 export default function configureStore(history: History,initialState: ApplicationState): Store<ApplicationState> {

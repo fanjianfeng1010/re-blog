@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'zt'; /* 自定义的字体名称; */
+  src:url('./font/ztt.ttf') format(truetype);
+  font-weight: bold; /*  是否为粗体 */ 
+  font-style: normal; /*  定义字体样式，如斜体 */
+}
+
+@font-face {
+  font-family: 'english'; /* 自定义的字体名称; */
+  src:url('./font/Nowharehouse.ttf') format(truetype);
+  font-weight: bold; /*  是否为粗体 */ 
+  font-style: normal; /*  定义字体样式，如斜体 */
+}
+
+@font-face {
+  font-family: 'bad'; /* 自定义的字体名称; */
+  src:url('./font/BAD GRUNGE.ttf') format('truetype');
+  font-weight: bold; /*  是否为粗体 */ 
+  font-style: normal; /*  定义字体样式，如斜体 */
+}
+
+@font-face {
+  font-family: 'cartoon'; /* 自定义的字体名称; */
+  src:url('./font/TypoSlab Irregular Demo.otf') format('OpenType');
+  font-weight: bold; /*  是否为粗体 */ 
+  font-style: normal; /*  定义字体样式，如斜体 */
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 1493856 */
+  src: url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.eot');
+  src: url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1493856_fhsm6if2qns.svg#iconfont') format('svg');
+}

@@ -1,9 +1,10 @@
-import { ArticleAction, FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR } from './types'
+import { ArticleAction, FETCH_REQUEST, FETCH_SUCCESS, FETCH_ERROR,SAVE_ARTICLE,Article, fetchRequestAction } from './types'
 
 // 发送请求,向 reducer 传递正在发送请求这一消息,把 state设置为 true 改为 true
-export function fetchRequest(): ArticleAction {
+export function fetchRequest(action:fetchRequestAction): ArticleAction {
   return {
-    type: FETCH_REQUEST
+    type: FETCH_REQUEST,
+    payload:action.payload
   }
 }
 
@@ -20,5 +21,14 @@ export function fetchError(message:string): ArticleAction {
   return {
     type: FETCH_ERROR,
     message
+  }
+}
+
+
+// 每次请求对应的文章,把请求的结果存储到 redux 中,使下次查看同一篇文章时不需要再次获取数据
+export function saveArticle(data: Article): ArticleAction {
+  return {
+    type: SAVE_ARTICLE,
+    payload:data
   }
 }

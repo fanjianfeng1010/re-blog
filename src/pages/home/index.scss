@@ -1,0 +1,210 @@
+@font-face {
+  font-family: 'ztt'; /* 自定义的字体名称; */
+  src: url('../../assets/font/ztt.ttf') format(truetype);
+  font-weight: bold; /*  是否为粗体 */
+  font-style: normal; /*  定义字体样式，如斜体 */
+}
+
+.home-wrapper {
+  width: 100vw;
+  min-width: 768px;
+
+  .introduction {
+    min-width: 768px;
+    height: 50vh;
+    background: url('../../assets/img/banner1.jpg') 100% 100% ;
+
+    @media screen and (max-width:768px) {
+      display: none;
+    }
+    .introduction-wrapper {
+      margin: 0 auto;
+      width: 80vw;
+      text-align: center;
+      font-size: 5.2rem;
+      font-family: 'bad';
+      color:#fff;
+      p{
+        margin: 0;
+        .name {
+          font-size: 2.8rem;
+        }
+      }
+    }
+  }
+
+  .article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .article-list-item {
+      display: flex;
+      flex-direction: column;
+      flex: 2;
+      flex-basis: 33%;
+      flex-grow: initial;
+      padding: 5vh 2vh 5vh 5vh;
+      height: 90vh;
+      border-radius: 1vh;
+      box-shadow: 2px 1px 7px black;
+      transition: all ease-out 0.8s;
+      &:first-child {
+        background-color: #c7372a;
+      }
+      &:nth-child(3n + 2) {
+        background-color: #bc3428;
+      }
+      &:nth-child(3n + 3) {
+        background-color: #b13125;
+      }
+
+      &:nth-child(4) {
+        display: none;
+      }
+      @media screen and (max-width: 1440px) {
+        flex-basis: 50%;
+        height: 70vh;
+        &:nth-child(4) {
+          display: block;
+          background-color: #c7372a;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        flex-basis: 100%;
+        height: 60vh;
+      }
+
+      .article-header {
+        flex: 1;
+        height: 70px;
+        line-height: 70px;
+        .article-header-img {
+          display: inline-block;
+          position: relative;
+          width: 70px;
+          height: 70px;
+          margin-right: 20px;
+          transform: rotate(-20deg);
+          border: 5px solid #fff;
+          border-radius: 10px;
+          transition: all ease-out 0.6s;
+
+          &:hover {
+            transform: rotate(0);
+          }
+          img {
+            height: 60px;
+          }
+        }
+        .article-header-time {
+          font-size: 1.4rem;
+          color: #fff;
+          font-family: 'chinese';
+        }
+      }
+
+      .article-content {
+        flex: 3;
+        a {
+          text-decoration: none;
+          .article-content-title {
+            font-family: 'ztt', monospace;
+            display: -webkit-box;
+            overflow: hidden;
+            font-size: 2.6rem;
+            text-overflow: ellipsis;
+            -webkit-line-clamp: 5; /*这个数字是设置要显示省略号的行数*/
+            -webkit-box-orient: vertical;
+            color: #fff;
+          }
+        }
+        .article-content-summary {
+          font-size: 1.8rem;
+          color: #e2d7d7;
+        }
+      }
+
+      .article-info {
+        flex: 1;
+        .comment {
+          position: relative;
+          font-size: 2.3rem;
+          color: #fff;
+
+          .comment-count {
+            position: absolute;
+            top: 0;
+            left: 30px;
+            margin-left: 10px;
+            font-size: 1.1rem;
+          }
+        }
+
+        .category {
+          margin-top: 10px;
+          font-size: 2rem;
+          color: #fff;
+          overflow: hidden;
+          .icon {
+            float: left;
+            margin-right: 10px;
+          }
+          .category-name {
+            float: left;
+            margin-top: -5px;
+          }
+        }
+      }
+    }
+  }
+
+  .git-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 20px;
+    background-color: rgb(240, 234, 234);
+
+    .git-list-item {
+      flex: 1;
+      height: 70vh;
+      flex-basis: 25%;
+      transition: all ease-in-out .5s;
+      &:hover {
+        transform: scale(1.1);
+        background-color: #fff; 
+      }
+
+      @media screen and (max-width:1440px) {
+        flex-basis: 33%;
+        height: 60vh;
+      }
+
+      @media screen and (max-width:768px) {
+        flex-basis: 100%;
+        height: 50vh;
+      }
+    }
+    .say{
+      position: relative;
+      width: 100%;
+      height: 40vh;
+      padding-left: 20px;
+      padding-top: 50px;
+      background-color: #c7372a;
+      color: #fff;
+      font-size: 100px;
+      font-family: 'bad';
+   
+      div{
+        position: absolute;
+        top: 20%;
+        right: 10%;
+      }
+    }
+
+  }
+}
+
