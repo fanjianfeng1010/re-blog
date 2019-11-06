@@ -1,28 +1,26 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Avatar from '../../assets/img/avatar.jpg'
 import './index.scss'
 import { Article } from '../../store/article/types'
-import { connect } from 'react-redux';
-import { fetchArticle } from '../../api/article';
-import { RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { fetchArticle } from '../../api/article'
+import { RouteComponentProps } from 'react-router-dom'
 
-interface IProps {
-}
+interface IProps {}
 
 interface IState {
   data?: Article
-  loading:boolean
+  loading: boolean
 }
 
 type ComponentProps = IProps & RouteComponentProps
 
 class Detail extends Component<ComponentProps, IState> {
   constructor(props: ComponentProps) {
-    super(props) 
+    super(props)
     this.state = {
       data: undefined,
-      loading:true
+      loading: true
     }
   }
 
@@ -30,15 +28,15 @@ class Detail extends Component<ComponentProps, IState> {
     // 从浏览器地址获取当前文章的 ID,根据 ID 向服务器请求对应的数据
     let id = this.props.history.location.pathname.split('detail/')[1]
     let res = await fetchArticle(id)
-    if (res.data.data!==null) {
+    if (res.data.data !== null) {
       this.setState({
         loading: false,
-        data:res.data.data
+        data: res.data.data
       })
     } else {
       this.setState({ loading: false })
       this.props.history.push('/')
-    } 
+    }
   }
 
   render() {
@@ -62,17 +60,14 @@ class Detail extends Component<ComponentProps, IState> {
             </p>
             <h2 className="detail-content-title">{this.state.data.title}</h2>
             <hr />
-            <div className='markdown-body' dangerouslySetInnerHTML={{__html:this.state.data.content}}></div>
+            <div className="markdown-body" dangerouslySetInnerHTML={{ __html: this.state.data.content }}></div>
           </section>
         </div>
       )
     } else {
       return ''
     }
-   
   }
 }
 
-
-
-export default  Detail
+export default Detail

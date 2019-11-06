@@ -96,3 +96,21 @@ $headerColor: #d33a2c;
     }
   }
 }
+
+.footer-wrapper {
+  text-align: center;
+  a {
+    color: rgb(22, 21, 21);
+    text-decoration: none;
+    span {
+      i {
+        display: inline-block;
+        width: 20px;
+        height: 18px;
+        background-color: #fff;
+        background: url('../../assets/img/sprite_9dd5c92.png') -10px -44px no-repeat;
+        background-size: 128px 128px;
+      }
+    }
+  }
+}

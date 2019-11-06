@@ -3,11 +3,12 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 
 import { History } from 'history'
 
-import Home from './home/Home'
 import Header from './components/Header'
+import Home from './home/Home'
 import Detail from './detail/Detail'
 import Articles from './article/Articles'
 import About from './about/About'
+import Footer from './components/Footer'
 
 interface IProps {
   history: History
@@ -24,6 +25,7 @@ const Routes: React.FC<IProps> = ({ history }) => {
         <Route path="/about" component={About} />
         <Redirect from="/" to="/home" />
       </Switch>
+      <Footer />
     </>
   )
 }
