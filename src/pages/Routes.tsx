@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch,Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import { History } from 'history'
 
@@ -15,21 +15,16 @@ interface IProps {
 
 const Routes: React.FC<IProps> = ({ history }) => {
   return (
-    <div>
+    <>
       <Header />
-     {/*  <TransitionGroup
-      >
-         <CSSTransition timeout={500} key={location.pathname} classNames="fade">*/}
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/detail/:id"  component={Detail} />
-            <Route path="/article"  component={Articles} />
-            <Route path="/about"  component={About} />
-             <Redirect from='/' to='/home'/> 
-          </Switch>
-      {/*   </CSSTransition>
-      </TransitionGroup> */}
-      </div>
+      <Switch>
+        <Route path="/home" component={Home} />
+        <Route path="/detail/:id" component={Detail} />
+        <Route path="/article" component={Articles} />
+        <Route path="/about" component={About} />
+        <Redirect from="/" to="/home" />
+      </Switch>
+    </>
   )
 }
 

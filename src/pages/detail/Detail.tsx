@@ -29,7 +29,6 @@ class Detail extends Component<ComponentProps, IState> {
   async componentDidMount() {
     // 从浏览器地址获取当前文章的 ID,根据 ID 向服务器请求对应的数据
     let id = this.props.history.location.pathname.split('detail/')[1]
-    console.log(id);
     let res = await fetchArticle(id)
     if (res.data.data!==null) {
       this.setState({

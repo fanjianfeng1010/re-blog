@@ -5,50 +5,48 @@
   font-style: normal; /*  定义字体样式，如斜体 */
 }
 
+@function x2w($px) {
+  @return $px / 375 * 100vw;
+}
+
 .home-wrapper {
-  width: 100vw;
-  min-width: 768px;
-
+  display: flex;
+  flex-direction: column;
   .introduction {
-    min-width: 768px;
-    height: 50vh;
-    background: url('../../assets/img/banner1.jpg') 100% 100% ;
-
-    @media screen and (max-width:768px) {
-      display: none;
-    }
+    flex: 2;
+    width: x2w(375);
+    height: 30vh;
+    background: url('../../assets/img/banner1.jpg') 100% 100%;
+    background-size: cover;
     .introduction-wrapper {
       margin: 0 auto;
-      width: 80vw;
+      width: 100%;
       text-align: center;
-      font-size: 5.2rem;
+      font-size: x2w(40);
       font-family: 'bad';
-      color:#fff;
-      p{
+      color: #fff;
+      p {
         margin: 0;
         .name {
-          font-size: 2.8rem;
+          font-size: 1.9rem;
         }
       }
     }
   }
-
   .article-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
     .article-list-item {
       display: flex;
       flex-direction: column;
-      flex: 2;
-      flex-basis: 33%;
       flex-grow: initial;
-      padding: 5vh 2vh 5vh 5vh;
-      height: 90vh;
+      flex-basis: 100%;
+      width: x2w(375);
+      padding: 20px;
       border-radius: 1vh;
       box-shadow: 2px 1px 7px black;
-      transition: all ease-out 0.8s;
+
       &:first-child {
         background-color: #c7372a;
       }
@@ -58,22 +56,9 @@
       &:nth-child(3n + 3) {
         background-color: #b13125;
       }
-
       &:nth-child(4) {
-        display: none;
-      }
-      @media screen and (max-width: 1440px) {
-        flex-basis: 50%;
-        height: 70vh;
-        &:nth-child(4) {
-          display: block;
-          background-color: #c7372a;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        flex-basis: 100%;
-        height: 60vh;
+        display: block;
+        background-color: #c7372a;
       }
 
       .article-header {
@@ -90,7 +75,6 @@
           border: 5px solid #fff;
           border-radius: 10px;
           transition: all ease-out 0.6s;
-
           &:hover {
             transform: rotate(0);
           }
@@ -99,12 +83,11 @@
           }
         }
         .article-header-time {
-          font-size: 1.4rem;
+          font-size: x2w(18);
           color: #fff;
           font-family: 'chinese';
         }
       }
-
       .article-content {
         flex: 3;
         a {
@@ -113,43 +96,42 @@
             font-family: 'ztt', monospace;
             display: -webkit-box;
             overflow: hidden;
-            font-size: 2.6rem;
+            font-size: 1.8rem;
             text-overflow: ellipsis;
-            -webkit-line-clamp: 5; /*这个数字是设置要显示省略号的行数*/
+            -webkit-line-clamp: 2; /*这个数字是设置要显示省略号的行数*/
             -webkit-box-orient: vertical;
             color: #fff;
           }
         }
         .article-content-summary {
-          font-size: 1.8rem;
+          font-size: 1.2rem;
           color: #e2d7d7;
         }
       }
 
       .article-info {
         flex: 1;
+        font-size: 1.8rem;
+        color: #fff;
         .comment {
           position: relative;
-          font-size: 2.3rem;
-          color: #fff;
 
           .comment-count {
             position: absolute;
-            top: 0;
+            top: -2px;
             left: 30px;
-            margin-left: 10px;
+            margin-left: 2px;
             font-size: 1.1rem;
           }
         }
 
         .category {
           margin-top: 10px;
-          font-size: 2rem;
-          color: #fff;
           overflow: hidden;
           .icon {
+            transform: scale(0.8);
             float: left;
-            margin-right: 10px;
+            margin-right: 5px;
           }
           .category-name {
             float: left;
@@ -160,51 +142,121 @@
     }
   }
 
-  .git-list {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    padding-top: 20px;
-    background-color: rgb(240, 234, 234);
-
-    .git-list-item {
-      flex: 1;
-      height: 70vh;
-      flex-basis: 25%;
-      transition: all ease-in-out .5s;
-      &:hover {
-        transform: scale(1.1);
-        background-color: #fff; 
+  @media screen and (min-width: 767px) {
+    .introduction {
+      height: 30vh;
+      .introduction-wrapper {
+        color: #fff;
+        font-size: 6rem;
+        p {
+          margin: 0;
+          .name {
+            font-size: 3.9rem;
+          }
+        }
       }
-
-      @media screen and (max-width:1440px) {
-        flex-basis: 33%;
-        height: 60vh;
-      }
-
-      @media screen and (max-width:768px) {
+    }
+    .article-list {
+      .article-list-item {
+        flex: 2;
         flex-basis: 100%;
-        height: 50vh;
-      }
-    }
-    .say{
-      position: relative;
-      width: 100%;
-      height: 40vh;
-      padding-left: 20px;
-      padding-top: 50px;
-      background-color: #c7372a;
-      color: #fff;
-      font-size: 100px;
-      font-family: 'bad';
-   
-      div{
-        position: absolute;
-        top: 20%;
-        right: 10%;
+        padding: 5vh 2vh 5vh 5vh;
+        transition: all ease-out 0.8s;
+        @media screen and (min-width: 1024px) {
+          flex-basis: 50%;
+          height: 80vh;
+          &:nth-child(4) {
+            display: flex;
+          }
+        }
+
+        @media screen and (min-width: 1919px) {
+          flex-basis: 33%;
+          height: 70vh;
+          &:nth-child(4) {
+            display: none;
+          }
+        }
+        .article-header {
+          .article-header-time {
+            font-size: 1.4rem;
+            color: #fff;
+            font-family: 'chinese';
+          }
+        }
+        .article-content {
+          flex: 3;
+          a {
+            text-decoration: none;
+            .article-content-title {
+              font-size: 2rem;
+              -webkit-line-clamp: 3;
+            }
+          }
+          .article-content-summary {
+            font-size: 1.8rem;
+            color: #e2d7d7;
+          }
+        }
+
+        .article-info {
+          .comment {
+            font-size: 2.3rem;
+            .comment-count {
+              margin-left: 10px;
+              font-size: 1.1rem;
+            }
+          }
+          .category {
+            font-size: 2rem;
+            .category-name {
+              font-size: 1.8rem;
+            }
+          }
+        }
       }
     }
 
+    .git-list {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      text-align: center;
+      background-color: rgb(240, 234, 234);
+
+      .git-list-item {
+        flex: 1;
+        height: 20vh;
+        flex-basis: 25%;
+        padding-top: 2rem;
+        font-size: 6rem;
+        font-family: 'bad';
+        transition: all ease-in-out 2s;
+        &:hover {
+          background: url('../../assets/img/banner2.jpg') no-repeat;
+          background-size: 100%;
+          color: #fff;
+          transform: scale(1.1);
+          transition: all ease-in-out 2s;
+        }
+      }
+      .say {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+        padding-left: 20px;
+        padding-top: 50px;
+        background-color: #c7372a;
+        color: #fff;
+        font-size: 100px;
+        font-family: 'bad';
+
+        div {
+          position: absolute;
+          top: 20%;
+          right: 10%;
+        }
+      }
+    }
   }
 }
-

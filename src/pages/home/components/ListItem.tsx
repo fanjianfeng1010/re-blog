@@ -14,7 +14,7 @@ const ListItem: React.FC<Props> = ({ data }) => {
         <div className="article-header-img">
           <img src={avatar} alt="" />
         </div>
-        <span className="article-header-time">{data.createdAt.replace(/[TZ]/gi, '').replace(/\.\d+/, '')}</span>
+        <span className="article-header-time">{data.createdAt.replace(/[TZ]/gi, ' ').replace(/\.\d+/, '')}</span>
       </div>
       <div className="article-content">
         <Link to={`/detail/${data._id}`}>
