@@ -2,6 +2,9 @@
   @return $px / 375 * 100vw;
 }
 .articles-wrapper {
+  @media screen and( max-width:768px) {
+    margin-bottom: x2w(60);
+  }
   .articles-list-item {
     margin: 10px auto;
     margin-bottom: 10px;
@@ -59,6 +62,11 @@
     .icon {
       -webkit-animation: loading 0.5s steps(1) 0s infinite both;
       animation: loading 0.5s steps(1) 0s infinite both;
+    }
+
+    @media screen and(max-width:767px) {
+      height: x2w(26);
+      line-height: x2w(26);
     }
   }
 }

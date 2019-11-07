@@ -36,14 +36,11 @@ class ArticlePage extends Component<ComponentProps, IState> {
 
   // 当用户进入页面,组件加载完毕后,派发获取信息行为
   async componentDidMount() {
-    const { data } = this.props
-    if (!data || data.length === 0) {
-      await this.props.fetchRequest({
-        type: FETCH_REQUEST
-      })
-    }
+    if (this.props.data.length > 0) return
+    await this.props.fetchRequest({
+      type: FETCH_REQUEST
+    })
   }
-
   render() {
     const { data, loading } = this.props
     const { showMore } = this.state
@@ -55,21 +52,20 @@ class ArticlePage extends Component<ComponentProps, IState> {
               <ArticleListItem data={item} key={item._id} />
             ))}
           </QueueAnim>
-          <QueueAnim delay={600} className="queue-simple">
-            {showMore ? (
-              <div className="loading" onClick={this.handleClick}>
-                {loading ? (
-                  <svg className="icon" aria-hidden="true">
-                    <use xlinkHref="#icon-loading"></use>
-                  </svg>
-                ) : (
-                  '加载更多'
-                )}
-              </div>
-            ) : (
-              ''
-            )}
-          </QueueAnim>
+
+          {showMore ? (
+            <div className="loading" onClick={this.handleClick}>
+              {loading ? (
+                <svg className="icon" aria-hidden="true">
+                  <use xlinkHref="#icon-loading"></use>
+                </svg>
+              ) : (
+                '加载更多'
+              )}
+            </div>
+          ) : (
+            ''
+          )}
         </section>
       )
     }

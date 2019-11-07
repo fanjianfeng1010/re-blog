@@ -9,6 +9,11 @@
   @return $px / 375 * 100vw;
 }
 
+@media screen and (max-width: 768px) {
+  .home-wrapper {
+    margin-bottom: x2w(100);
+  }
+}
 .home-wrapper {
   display: flex;
   flex-direction: column;

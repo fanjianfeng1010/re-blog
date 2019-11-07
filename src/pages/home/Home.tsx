@@ -38,6 +38,7 @@ class Home extends Component<ComponentProps, IState> {
   }
 
   async componentDidMount() {
+    if (this.props.data.length > 0) return
     await this.props.fetchRequest({
       type: FETCH_REQUEST,
       payload: {

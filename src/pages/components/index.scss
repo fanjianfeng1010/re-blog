@@ -20,10 +20,19 @@ $headerColor: #d33a2c;
   }
 
   @media screen and (max-width: 768px) {
+    display: flex;
     height: 10vh;
-
     .logo {
       display: block;
+      flex: 1;
+      flex-basis: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #fff;
+      font-size: x2w(33);
+      h1 {
+        margin: 0;
+      }
     }
     * {
       display: none;
@@ -56,7 +65,7 @@ $headerColor: #d33a2c;
             color: inherit;
             text-decoration: none;
             &.active {
-              color: rgba($color: #000, $alpha: 0.7);
+              color: rgba($color: #432f21, $alpha: 0.7);
             }
           }
 
@@ -98,18 +107,63 @@ $headerColor: #d33a2c;
 }
 
 .footer-wrapper {
+  color: #fff;
+  background-color: #97282c;
   text-align: center;
-  a {
-    color: #fff;
-    text-decoration: none;
-    span {
-      i {
-        display: inline-block;
-        width: 20px;
-        height: 18px;
-        background-color: #fff;
-        background: url('../../assets/img/sprite_9dd5c92.png') -10px -44px no-repeat;
-        background-size: 128px 128px;
+  height: 50px;
+  line-height: 50px;
+
+  .icp-info {
+    a {
+      color: #fff;
+      text-decoration: none;
+      span {
+        i {
+          display: inline-block;
+          width: 20px;
+          height: 18px;
+          background-color: #fff;
+          background: url('../../assets/img/sprite_9dd5c92.png') -10px -44px no-repeat;
+          background-size: 128px 128px;
+        }
+      }
+    }
+  }
+  .footer-nav {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .icp-info {
+      display: none;
+    }
+
+    .footer-nav {
+      position: fixed;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding-left: 0;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      border-radius: x2w(20) x2w(20) 0 0;
+      background: linear-gradient(to bottom, #d33a2c, #96036d);
+      color: #fff;
+      .footer-nav-item {
+        flex-basis: 33%;
+        a {
+          color: rgba(0, 0, 0, 0.6);
+          text-decoration: none;
+          &.active {
+            transform: scale(1.1);
+            color: #fff;
+          }
+          svg {
+            font-size: x2w(40);
+          }
+        }
       }
     }
   }
