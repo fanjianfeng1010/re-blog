@@ -1,22 +1,24 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Article } from '../../../store/article/types'
+import { Link } from 'react-router-dom'
 
-interface Props {
-  
+interface IProps {
+  data: Article
 }
 
- const ArticleListItem: React.FC<Props> = () => {
+const ArticleListItem: React.FC<IProps> = ({ data }) => {
   return (
-    <section className='articles-list-item'>
-      <h2>asdjfkahsdjkfhajksdhsfjkas</h2>
-      <span>2010-10-10 10:22:22</span>
-      <p>aklsfjklajsdklfjakldsjfklasjdsklfa
-        askdsfhasdfhjkashdjkfahsdjkfhasjkfakljsfklasdf
-      </p>
-      <span>分类:JavaScript</span> <br />
-      <span>点赞:22</span><br/>
-      <span>阅读:33</span><br/>
-      <NavLink to="/home">阅读更多</NavLink>
+    <section className="articles-list-item">
+      <Link to={`/detail/${data._id}`}>
+        <h2 className="list-item-title">{data.title}</h2>
+      </Link>
+      <span className="list-item-time">{data.createdAt.replace(/[tz]/gi, ' ').replace(/\.\d+/, '')}</span>
+      <p className="list-item-summary">{data.summary}</p>
+      <span className="list-item-category">分类:{data.category.name}</span> <br />
+      <span className="list-item-view-count">观看:{data.viewsCount}</span>
+      <br />
+      <span className="list-item-comment-count">评论:{data.commentCount}</span>
+      <br />
     </section>
   )
 }

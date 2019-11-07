@@ -1,21 +1,23 @@
-import Axios from '../utils/axios';
+import Axios from '../utils/axios'
 
-interface queryDataType {
-  page: number,
-  limit:number,
+export interface queryDataType {
+  page?: number
+  limit?: number
 }
 
 // 获取所有文章 page:当前请求数据在服务器中的页数 limit:每次发送请求一共请求多少数据
-export const fetchArticles = ({page=1,limit=10}:queryDataType) => {
+export const fetchArticles = ({ page, limit }: queryDataType) => {
   return Axios.get('/api/articles', {
     params: {
-      page,limit
+      page,
+      limit
     }
   })
 }
 
-export const fetchArticle = (id: string,md=true) => Axios.get(`/api/article/${id}`, {
-  params: {
-    md
-  }
-})
+export const fetchArticle = (id: string, md = true) =>
+  Axios.get(`/api/article/${id}`, {
+    params: {
+      md
+    }
+  })

@@ -1,11 +1,19 @@
+// 第三方库
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { RouteComponentProps } from 'react-router-dom'
+import QueueAnim from 'rc-queue-anim'
+
+// 内部组件
+import ListItem from './components/ListItem'
+import GitItem from './components/GitItem'
+
+// 内部常量或方法
 import { ApplicationState } from '../../store/index'
 import { Article, FETCH_REQUEST } from '../../store/article/types'
 import { fetchRequest } from '../../store/article/action'
-import ListItem from './components/ListItem'
-import GitItem from './components/GitItem'
+
+// 样式文件
 import './index.scss'
 
 type PropFromMap = {
@@ -33,8 +41,7 @@ class Home extends Component<ComponentProps, IState> {
     await this.props.fetchRequest({
       type: FETCH_REQUEST,
       payload: {
-        page: 1,
-        limit: 20
+        page: 1
       }
     })
   }
@@ -53,9 +60,12 @@ class Home extends Component<ComponentProps, IState> {
             </div>
           </section>
           <div className="article-list">
-            {this.props.data.slice(0, 4).map(item => (
-              <ListItem data={item} key={item._id} />
-            ))}
+            {this.props.data
+              .reverse()
+              .slice(0, 4)
+              .map(item => (
+                <ListItem data={item} key={item._id} />
+              ))}
           </div>
           <div className="git-list">
             <GitItem />

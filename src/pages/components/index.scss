@@ -30,7 +30,7 @@ $headerColor: #d33a2c;
     }
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   .header-content {
     display: flex;
     height: 100%;
@@ -81,7 +81,7 @@ $headerColor: #d33a2c;
           .desc {
             transition: all ease 0.4s;
             color: rgba($color: #fff, $alpha: 0.7);
-            font-family: 'english', Courier, monospace;
+            font-family: 'cartoon', Courier, monospace;
           }
           @media screen and (max-width: 1100px) {
             .desc {
@@ -100,7 +100,7 @@ $headerColor: #d33a2c;
 .footer-wrapper {
   text-align: center;
   a {
-    color: rgb(22, 21, 21);
+    color: #fff;
     text-decoration: none;
     span {
       i {

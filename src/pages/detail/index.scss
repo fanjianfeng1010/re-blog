@@ -3,6 +3,7 @@
   margin-top: 20px;
   padding: 10vh 10vw;
   transition: all ease 0.4s;
+  background-color: #fff;
   @media screen and (max-width: 1440px) {
     flex-direction: column;
     .detail-author-info {
@@ -20,7 +21,7 @@
       width: 100px;
       font-size: 0;
       vertical-align: baseline;
-      border: 5px solid #c7372a;
+      border: 5px solid rgba(0, 0, 0, 0.2);
       border-radius: 5px;
       transform: rotate(-20deg);
       img {
