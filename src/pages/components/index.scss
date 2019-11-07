@@ -110,8 +110,8 @@ $headerColor: #d33a2c;
   color: #fff;
   background-color: #97282c;
   text-align: center;
-  height: 50px;
-  line-height: 50px;
+  height: x2w(50);
+  line-height: x2w(50);
 
   .icp-info {
     a {
@@ -137,7 +137,6 @@ $headerColor: #d33a2c;
     .icp-info {
       display: none;
     }
-
     .footer-nav {
       position: fixed;
       display: flex;
@@ -146,6 +145,7 @@ $headerColor: #d33a2c;
       margin: 0;
       padding-left: 0;
       width: 100%;
+      height: x2w(80);
       flex-direction: row;
       justify-content: space-between;
       border-radius: x2w(20) x2w(20) 0 0;
@@ -153,15 +153,24 @@ $headerColor: #d33a2c;
       color: #fff;
       .footer-nav-item {
         flex-basis: 33%;
+
         a {
           color: rgba(0, 0, 0, 0.6);
           text-decoration: none;
           &.active {
-            transform: scale(1.1);
             color: #fff;
           }
           svg {
+            display: block;
+            margin: 10px auto 0;
             font-size: x2w(40);
+            &.home {
+              transform: scale(0.8);
+            }
+          }
+          span {
+            display: block;
+            margin-top: x2w(-15);
           }
         }
       }

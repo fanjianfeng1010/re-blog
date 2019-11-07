@@ -9,10 +9,10 @@ const Footer: React.FC<Props> = () => {
       <ul className="footer-nav">
         <li className="footer-nav-item">
           <NavLink to="/home">
-            <svg className="icon" aria-hidden="true">
+            <svg className="icon home" aria-hidden="true">
               <use xlinkHref="#icon-shouye"></use>
-            </svg>{' '}
-            <br />
+            </svg>
+
             <span>home</span>
           </NavLink>
         </li>
@@ -21,7 +21,7 @@ const Footer: React.FC<Props> = () => {
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-book"></use>
             </svg>
-            <br />
+
             <span>article</span>
           </NavLink>
         </li>
@@ -30,7 +30,7 @@ const Footer: React.FC<Props> = () => {
             <svg className="icon" aria-hidden="true">
               <use xlinkHref="#icon-infopersonal"></use>
             </svg>
-            <br />
+
             <span>about me</span>
           </NavLink>
         </li>
